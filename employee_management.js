@@ -40,3 +40,15 @@ getDetails() {
     }
     };
 // commit 3: Create Manager class with inheritance from Employee
+    // Handle Bonuses for Managers
+    // decided to create a funcion
+function calculateTotalSalaryWithBonus(department) {
+return department.employees.reduce((totalSalary, employee) => {
+        if (employee instanceof Manager) { // instanceof defines manager, so that it applies to managers only
+        totalSalary += employee.salary + employee.bonus;
+} else {// if not manager just return regular salary in the sum
+totalSalary += employee.salary;}
+            return totalSalary;
+ }, 0);}
+ // commit 4: Handle bonuses in the department salary calculation
+   
