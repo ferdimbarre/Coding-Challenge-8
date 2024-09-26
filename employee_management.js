@@ -51,4 +51,29 @@ totalSalary += employee.salary;}
             return totalSalary;
  }, 0);}
  // commit 4: Handle bonuses in the department salary calculation
-   
+    // Create and Manage Departments and Employees
+// create new company structure with at least 2 departments:
+        
+const engineering = new Department ("Engineering");
+const marketing = new Department ("Marketing"); //creates 2 departments 
+        
+// create empkoyees 
+const alice = new Employee("Alice", 80000, "Developer", "Engineering");
+const bob = new Employee("Bob", 75000, "Designer", "Marketing"); //creates employees 
+const charlie = new Manager("Charlie", 120000, "Engineering Manager", "Engineering", 20000);
+const diana = new Manager("Diana", 130000, "Marketing Manager", "Marketing", 25000); //creates managers with bonuses 
+        
+// add to departments 
+engineering.addEmployee(alice);
+engineering.addEmployee(charlie);
+marketing.addEmployee(bob);
+marketing.addEmployee(diana); //adds employees to departments
+        
+// calculate total salary 
+        console.log(`Total salary in the Engineering department: $${engineering.getDepartmentSalary()}`);
+        console.log(`Total salary in the Marketing department: $${marketing.getDepartmentSalary()}`);
+        
+// calculate total salary when there are bonuses using the standalone function
+        console.log(`Total salary with bonuses for Managers in the Engineering department: $${calculateTotalSalaryWithBonus(engineering)}`);
+        console.log(`Total salary with bonuses for Managers in the Marketing department: $${calculateTotalSalaryWithBonus(marketing)}`);
+        
