@@ -27,3 +27,16 @@ getDepartmentSalary(){
 } // calculates department salary 
 }
 //commit 2 is here
+// Create a Manager Class that Inherits from Employee
+class Manager extends Employee {
+constructor(name, salary, position, department, bonus) {
+            
+super(name, salary, position, department);
+ this.bonus = bonus; }
+    
+    // Override getDetails to include the bonus
+getDetails() {
+    return `${this.name} manager has $${this.salary} salary, works as a(n) ${this.position} in the ${this.department} department, and has a bonus of $${this.bonus}.`;
+    }
+    };
+// commit 3: Create Manager class with inheritance from Employee
